@@ -1,0 +1,10 @@
+datasets:
+  - id: "tourism_guides_directory"
+    owner: "MTAESS / Ministère du Tourisme (via data.gov.ma)"
+    description: "Annuaire des guides touristiques (Nom, Prénom, Ville, Catégorie, Langue de travail)."
+    source_type: "http"
+    url: "https://data.gov.ma/data/fr/dataset/21992f21-b6e7-432c-9a90-4f7a84cee8c1/resource/e587b319-7436-4190-b685-e61ebe5d3de1/download/annuaire-des-guides-touristiques-ministere-du-tourisme.csv"
+    format: "csv"
+    refresh: "manual"
+    license: "ODbL"
+    bronze_path: "bronze/tourism/guides_directory/"

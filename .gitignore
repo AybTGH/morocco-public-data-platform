@@ -1,18 +1,15 @@
-# Build and Release Folders
-bin-debug/
-bin-release/
-[Oo]bj/
-[Bb]in/
+# Docker persistent storage
+docker_data/
 
-# Other files and folders
-.settings/
+# Environment secrets
+.env
 
-# Executables
-*.swf
-*.air
-*.ipa
-*.apk
+# Python virtual env
+.venv/
 
-# Project files, i.e. `.project`, `.actionScriptProperties` and `.flexProperties`
-# should NOT be excluded as they contain compiler settings and other important
-# information for Eclipse / Flash Builder.
+# Python cache
+__pycache__/
+*.pyc
+
+# ignire steps file
+.all_steps/
