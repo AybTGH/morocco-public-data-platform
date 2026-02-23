@@ -7,4 +7,15 @@ datasets:
     format: "csv"
     refresh: "manual"
     license: "ODbL"
+
+    # Lake (MinIO)
+    lake_bucket: "morocco-data"
+    bronze_prefix: "bronze/tourism/guides_directory/"
+    silver_prefix: "silver/tourism/guides_directory/"
+
+    # Warehouse (Postgres)
+    staging_schema: "staging"
+    staging_table: "tourism_guides_directory"
+
+    # Backward-compatible 
     bronze_path: "bronze/tourism/guides_directory/"
