@@ -1,0 +1,132 @@
+- objectif: build a Morocco public-data platform, starting with 1 dataset then expanding
+- outputs: 
+	- bronze raw file stored (versioned)
+	- silver parquet (clean)
+	- Postgres table
+	- dbt Gold models + dbt tests
+	- 1 dashboard
+	- steps:
+		- create docker-compose.yml
+		- pull postgres and minio images
+		- docker compose up -d
+		- check m
+-Step 0: bring up local services with docker compose services
+	- postgres (warehouse) --> warehouse
+	- minio for object storage--> data lake
+	- dbt container (runs dbt core)
+	- superset for dataviz
+
+- Step 1: cerate a reproductible environment and clean repo layout
+	- create a repo + git init 
+	- create .venv and install packages
+	- create folders: 
+		- config/ : dataset contracts
+		- scripts/: python ingestion/parsing
+		- data/: bronze/silver locally or mounted volume
+		- dbt/ : dbt project
+
+
+- Step 2: create configs/sources.yaml with 1 dataset contract, a dataset contract should always include: 
+	- id, owner, description, source type, URL, format, refresh, license, bronze_path
+	- create a scripts/show_scripts.py prints dataset from yaml 
+	PS: Hardcoding URL + using spaces in ids
+
+- Step 2.5: define data lake schema 
+	- docker compose up minio + postgres
+	- access postgres: docker exec -it morocco_postgres psql -U de_user -d morocco_dw
+	- get to minio and create bucket + schema morocco-data/
+  bronze/
+    tourism_guides/
+  silver/
+    tourism_guides/
+	- postgres schema: CREATE SCHEMA staging;
+	  CREATE SCHEMA analytics; 
+	- \dn
+
+- Step 3: Ingest to bronze (raw + versioned), write a script that 
+	- takes dataset_id --> reads its config --> download content --> writes to data/bronze/.. with timestamp filename + writes metadata sidecar (url, sha256, bytes, timestamp) data/bronze/<dataset_id>/...
+	PS: overwriting raw + no lineage metadata
+
+	
+
+- Step 4: bronze validation, check
+	- encoding + delimiter + row count sanity + column detection 
+	- validation script that FAILS on bad r
+	PS: never trust upstream data + blindly assuming CSV format is correct 
+
+- Step 5: silver layer
+	- parsing and structuring: convert raw text --> structured table
+		-  clean column names
+		- fix encoding issues
+		- normalize types
+		- remove BOM artifacts
+		- write Parquet data/silver/.../*.parquet
+
+- Step 6: Data quality Gate, add checks
+	- required columns exist 
+	- no empty critical fields
+	- reasonable row count
+	- duplicate detection
+	- value domain checks
+	PS: fail vs warn logic
+- Step 7: load to postgres 
+	- create table 
+	- load Silver data into staging schema exp: staging.tourism_guides
+	- replace or incremental strategy 
+	--> queryable table in Postgres
+
+- Step 8: Create dbt project, dbt connects to postgres and builds models
+
+- Step 9: dbt staging models, dbt models do light cleanup (SQL):
+	- rename columns 
+	- standardize language codes (perfect for dbt) 
+
+- Step 10: dbt Gold start schema, cerate 
+	- dim_city
+	- dim_category
+	- dim_language
+	- fact_guides
+
+- Step 11: dbt tests + docs
+	- not null test
+	- accepted_values tests (after normalization)
+	- uniqueness tests on dims
+	- dbt docs generation
+
+
+- Step 9: serving layer --> BI Layer (Apache Superset), build dashboards: 
+	- guides per city
+	- languages per city
+	- category distribution
+	- duplicate detection visual
+
+- Step 10: orchestration production simulation --> airflow integration, turn scripts into DAG:
+	- task: ingest
+	- task: validate
+	- task: silver transform
+	- task: load to staging
+	- task: run dbt run + dbt test
+
+Step 11: incremental loading strategy, instead of replace: 
+	- detect new bronze file
+	- load only new rows
+	- deduplicate in SQL
+
+- Step 12: add second Dataset exp: HCP employment data, budget dataset then integrate into same architecture, reuse pipeline structure
+
+- Step 13: logging and monitoring, add
+	- structured logs
+	- pipeline runtime metrics
+	- basic alert logic
+	optionnal: prometheus + Grafana
+
+- Step 14: infrastructure and portfolio 
+	- README professionalization include
+		- architecture diagram
+		- data flow diagram
+		- table schemas
+		- screenshots
+		- setup instructions
+		- design decisions
+		- known limitations
+

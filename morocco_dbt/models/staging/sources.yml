@@ -1,0 +1,14 @@
+version: 2
+
+sources:
+  - name: staging
+    schema: staging
+    tables:
+      - name: tourism_guides_directory  
+        description: "Loaded from Silver parquet via Python script"
+        columns:
+          - name: nom
+          - name: prenom
+          - name: ville
+          - name: categorie
+          - name: langue_de_travail

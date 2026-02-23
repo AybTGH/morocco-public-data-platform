@@ -1,0 +1,15 @@
+version: 2
+
+models:
+  - name: stg_tourism_guides
+    description: "Cleaned tourism guides staging model"
+    columns:
+      - name: city
+        tests:
+          - not_null
+      - name: work_language
+        tests:
+          - not_null
+      - name: category
+        tests:
+          - not_null

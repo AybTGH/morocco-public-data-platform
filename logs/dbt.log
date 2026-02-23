@@ -1,0 +1,56 @@
+[0m18:39:59.453065 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020093ED1BE0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020094981F90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000200960DFED0>]}
+
+
+============================== 18:39:59.467941 | cc14afa4-5986-4443-be85-dd386177564f ==============================
+[0m18:39:59.467941 [info ] [MainThread]: Running with dbt=1.11.6
+[0m18:39:59.469168 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'no_print': 'None', 'static_parser': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'write_json': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'empty': 'None', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': 'C:\\Users\\IdeaPad PRO 5\\.dbt', 'use_colors': 'True', 'invocation_command': 'dbt init morocco_dbt', 'indirect_selection': 'eager', 'use_experimental_parser': 'False', 'log_path': 'logs'}
+[0m18:39:59.508276 [info ] [MainThread]: Creating dbt configuration folder at C:\Users\IdeaPad PRO 5\.dbt
+[0m18:39:59.513044 [debug] [MainThread]: Starter project path: C:\Users\IdeaPad PRO 5\Desktop\data_maroc\morocco-public-data-platform\.venv\Lib\site-packages\dbt\include\starter_project
+[0m18:39:59.571232 [info ] [MainThread]: 
+Your new dbt project "morocco_dbt" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m18:39:59.572306 [info ] [MainThread]: Setting up your profile.
+[0m18:42:45.419412 [info ] [MainThread]: Profile morocco_dbt written to C:\Users\IdeaPad PRO 5\.dbt\profiles.yml using target's profile_template.yml and your supplied values. Run 'dbt debug' to validate the connection.
+[0m18:42:45.421585 [debug] [MainThread]: Command `dbt init` succeeded at 18:42:45.421365 after 166.19 seconds
+[0m18:42:45.422260 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020096082C40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002009617ED50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000200950057B0>]}
+[0m18:42:45.422942 [debug] [MainThread]: Flushing usage events
+[0m18:42:46.891920 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m18:45:51.438258 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000023220111BE0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000023220BC1F90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000023222323ED0>]}
+
+
+============================== 18:45:51.452163 | 472db48b-6407-4859-88ca-34b61a6ec03a ==============================
+[0m18:45:51.452163 [info ] [MainThread]: Running with dbt=1.11.6
+[0m18:45:51.453646 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'no_print': 'None', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'printer_width': '80', 'write_json': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'empty': 'None', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'profiles_dir': 'C:\\Users\\IdeaPad PRO 5\\.dbt', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'indirect_selection': 'eager', 'use_colors': 'True', 'invocation_command': 'dbt init morocco_dbt', 'use_experimental_parser': 'False', 'log_path': 'logs'}
+[0m18:45:51.494112 [info ] [MainThread]: A project called morocco_dbt already exists here.
+[0m18:45:51.495847 [debug] [MainThread]: Command `dbt init` succeeded at 18:45:51.495636 after 0.27 seconds
+[0m18:45:51.496500 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000023221263820>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002322229BE30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000023221248270>]}
+[0m18:45:51.497447 [debug] [MainThread]: Flushing usage events
+[0m18:45:52.996043 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m18:48:48.546506 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B5CD541BE0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B5CDFF1F90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B5CF833ED0>]}
+
+
+============================== 18:48:48.561028 | 22e49f6b-7b4c-49c5-8a93-b01a0b50cbc8 ==============================
+[0m18:48:48.561028 [info ] [MainThread]: Running with dbt=1.11.6
+[0m18:48:48.562428 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'no_print': 'None', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'printer_width': '80', 'write_json': 'True', 'empty': 'False', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'fail_fast': 'False', 'debug': 'False', 'log_format': 'default', 'profiles_dir': 'C:\\Users\\IdeaPad PRO 5\\.dbt', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'use_colors': 'True', 'invocation_command': 'dbt run', 'indirect_selection': 'eager', 'use_experimental_parser': 'False', 'log_path': 'logs'}
+[0m18:48:48.563366 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path C:\Users\IdeaPad PRO 5\Desktop\data_maroc\morocco-public-data-platform\dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m18:48:48.565396 [debug] [MainThread]: Command `dbt run` failed at 18:48:48.565184 after 0.25 seconds
+[0m18:48:48.566075 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B5CE693490>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B5CE68FD10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B5CE6749E0>]}
+[0m18:48:48.566778 [debug] [MainThread]: Flushing usage events
+[0m18:48:49.881006 [debug] [MainThread]: An error was encountered while trying to flush usage events

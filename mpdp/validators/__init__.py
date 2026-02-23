@@ -1,0 +1,1 @@
+from mpdp.validators.contract import validate_dataset_contract
