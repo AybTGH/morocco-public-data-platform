@@ -3,13 +3,13 @@ this project aims to get data from open sources form the government and transfor
 
 Overview: 
 - Pipeline: ingest --> store raw data --> transform --> publish 
-- Sources:
+- Sources: files from open data platfroms
 - Contracts: expected schema + naming + primary keys + partitionning + quality rules
-- Ops: scheduming + logging + retries + versionning + monitoring 
-- Stack technique: ...
+- Ops: scheduling + logging + retries + versionning + monitoring 
+- Stack technique: minio + postgres + dbt 
 
 ## architecture
-""" 
+```
 morocco-public-data-platform/
 ├─ configs/
 │  └─ sources.yaml                 # dataset contracts (YAML)
@@ -37,6 +37,6 @@ morocco-public-data-platform/
 ├─ .gitignore
 ├─ requirements.txt                # or pyproject.toml
 └─ README.md
-"""
+```
 ### activate env
 .venv\Scripts\activate
